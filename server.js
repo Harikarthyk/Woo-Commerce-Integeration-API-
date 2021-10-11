@@ -13,7 +13,6 @@ app.get('/', (req, res) => {
 app.use('/api',productRoute);
 app.use('/api',categoryRoute);
 
-
 app.listen(PORT, () => {
     console.log(`Server is up and running in port ${PORT}`)
 })
