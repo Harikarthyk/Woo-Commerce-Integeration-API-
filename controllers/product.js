@@ -8,7 +8,7 @@ exports.getAllProducts = async(req,res) => {
         for(let filter in filters){
             queries += (queries.length === 0 ? "" : "&") + (filter) + "=" + filters[filter];
         }
-        const response = await WooCommerce.get(`products?${queries}`);
+        const response = await WooCommerce.get(`products/?${queries}`);
         const { data } = response;
         return res.status(200).json({
             products:data,
@@ -48,7 +48,7 @@ exports.getProductAllReviews = async(req, res) =>{
         for(let filter in filters){
             queries += (queries.length === 0 ? "" : "&") + (filter) + "=" + filters[filter];
         }
-        const response = await WooCommerce.get(`products/reviews?${queries}`);
+        const response = await WooCommerce.get(`products/reviews/?${queries}`);
         const { data } = response;
         return res.status(200).json({
             reviews:data,

@@ -1,5 +1,5 @@
-/** Express router providing product related routes
- * @module routes/product
+/** Express router providing category related routes
+ * @module routes/category
  * @requires express
  */
 const express = require('express');

@@ -3,6 +3,7 @@ require("dotenv");
 const app = express();
 const productRoute = require('./routes/product');
 const categoryRoute = require('./routes/category');
+const orderRoute = require('./routes/order');
 
 const PORT =  process.env.PORT || 5050;
 
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
 
 app.use('/api',productRoute);
 app.use('/api',categoryRoute);
+app.use('/api',orderRoute);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running in port ${PORT}`)
