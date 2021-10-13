@@ -5,6 +5,7 @@ const productRoute = require('./routes/product');
 const categoryRoute = require('./routes/category');
 const orderRoute = require('./routes/order');
 const customerRoute = require('./routes/customer');
+const cartRoute = require('./routes/cart');
 
 const PORT =  process.env.PORT || 5050;
 
@@ -18,6 +19,7 @@ app.use('/api',productRoute);
 app.use('/api',categoryRoute);
 app.use('/api',orderRoute);
 app.use('/api',customerRoute);
+app.use('/api',cartRoute);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running in port ${PORT}`)
