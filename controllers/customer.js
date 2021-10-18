@@ -23,11 +23,11 @@ exports.createNewCustomer = async (req, res) => {
 
 exports.mailVerification = async (req, res) => {
     try {
-        const {email} = req.body;
+        const {email, verify} = req.body;
         const response = await WooCommerce.get("customers");
         const {data} = response;
         const arr = await data.filter(customer => customer.email === email);
-        if(arr.length === 0){
+        if(arr.length === 0 && verify === true){
             return res.status(400).json({
                 success: false,
                 error: "Sorry, Email not registered"

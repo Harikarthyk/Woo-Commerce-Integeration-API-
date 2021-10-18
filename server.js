@@ -10,6 +10,7 @@ const cartRoute = require('./routes/cart');
 const PORT =  process.env.PORT || 5050;
 
 app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 app.get('/', (req, res) => {
     res.send('Server is up and running successfully...');
