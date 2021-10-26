@@ -27,9 +27,7 @@ exports.addCartItem = async (req, res) => {
 }
 
 exports.updateCart = async(req , res) => {
-    const { password, username } = req.body;
-    const { quantity, item_key } = req.body;
-
+    const { password, username, quantity, item_key } = req.body;
     const CoCart = new CoCartAPI({
         url: "https://fredya15.sg-host.com/",
         consumerKey: username,
